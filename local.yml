@@ -30,9 +30,9 @@
 
     - name: Create an address Object
       panos_object:
-        ip_address: '192.168.2.10'
-        usename: 'admin'
-        password: 'admin'
+        ip_address: "192.168.2.10"
+        usename: "admin"
+        password: "admin"
         dns_server_primary: "8.8.8.8"
       
     - name: Create NAT rule for Web server
