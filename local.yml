@@ -17,7 +17,7 @@
 # EXECUTE
 # ansible-playbook playbook_set_srule.yml
 ---
-- hosts: all
+- hosts: localhost
   connection: local
 
   roles:
@@ -30,7 +30,7 @@
 
     - name: Create an address Object
       panos_object:
-        ip_address: 192.168.2.10
+        ip_address: '192.168.2.10'
         usename: 'admin'
         password: 'admin'
         dns_server_primary: "8.8.8.8"
