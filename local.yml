@@ -17,7 +17,7 @@
 # EXECUTE
 # ansible-playbook playbook_set_srule.yml
 ---
-- hosts: 192.168.1.120
+- hosts: localhost
   connection: local
 
   roles:
@@ -44,16 +44,4 @@
         dnat_address: "10.0.1.101"
         dnat_port: "80"
         commit: "False"
-    - name: add a rule to allow HTTP on custom port
-      panos_security_rule:
-        ip_address: "{{ mgmt_ip }}"
-        password: "{{admin_password}}"
-        operation: 'add'
-        rule_name: 'Web traffic'
-        service: 'service-http'
-        description: 'Allow HTTP traffic on custom port'
-        source_zone: ['untrust']
-        destination_zone: ['trust']
-        action: 'allow'
-        commit: "True"
 
