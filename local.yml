@@ -33,7 +33,7 @@
         ip_address: "{{mgmt_ip}}"
         usename: "{{admin_username}}"
         password: "{{admin_password}}"
-        dns_server_primary: "8.8.8.8"
+        #dns_server_primary: "8.8.8.8"
       
     - name: Create NAT rule for Web server
       panos_nat_rule:
