@@ -33,15 +33,16 @@
         ip_address: "{{ mgmt_ip }}"
         password: "{{admin_password}}"
         operation: 'add'
-        rule_name: "NATWeb"
+        rule_name: "SSh Permit"
         source_zone: ["untrust"]
-        destination_zone: "untrust"
+        destination_zone: ["trust"]
         source_ip: ["any"]
-        destination_ip: ["10.0.0.100"]
-        service: "service-http"
-        snat_type: "dynamic-ip-and-port"
-        snat_interface: "ethernet1/2"
-        dnat_address: "10.0.1.101"
-        dnat_port: "80"
-        commit: "False"
+        source_user: ["any"]
+        destination_ip: ["1.1.1.1"]
+        category: ["any"]
+        application: ["ssh"]
+        service: ["application_default"]
+        hip_profile: ["any"]
+        action: "allow"
+        commit: "True"
 
