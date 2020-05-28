@@ -17,7 +17,7 @@
 # EXECUTE
 # ansible-playbook playbook_set_srule.yml
 ---
-- hosts: localhost
+- hosts: 192.168.1.120
   connection: local
 
   roles:
@@ -32,7 +32,7 @@
       panos_nat_rule:
         ip_address: "{{ mgmt_ip }}"
         password: "{{admin_password}}"
-        operation: 'update'
+        operation: 'add'
         rule_name: "NATWeb"
         source_zone: ["untrust"]
         destination_zone: "untrust"
@@ -48,7 +48,7 @@
       panos_security_rule:
         ip_address: "{{ mgmt_ip }}"
         password: "{{admin_password}}"
-        operation: 'update'
+        operation: 'add'
         rule_name: 'Web traffic'
         service: 'service-http'
         description: 'Allow HTTP traffic on custom port'
